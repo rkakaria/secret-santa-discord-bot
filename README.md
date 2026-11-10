@@ -2,8 +2,8 @@
 This repository contains code for a simple Discord bot that assigns each member of the channel in which it is run another channel member as a Secret Santa giftee. 
 
 ## How it works
-For a channel with _n_ non-bot members, this bot will assign each member a different member as their Secret Santa giftee such that there is a cycle of length _n_ between members. For example, for a channel with members A, B, C, D, and E, running the bot could result in the assignations B -> E -> A -> D -> C -> B, where member B is assigned member E, member E is assigned member A, and so on. No cycles of length < _n_ are ever generated.  
-For each assignment, the code randomly selects from the pool of non-assigned members, so running the bot multiple times will result in different assignments.
+For a channel with _n_ non-bot members, this bot will assign each member a different member as their Secret Santa giftee such that there is a cycle of length _n_ between members. For example, for a channel with members A, B, C, D, and E, running the bot could result in the assignations B → E → A → D → C → B, where member B is assigned member E, member E is assigned member A, and so on. No cycles of length < _n_ are ever generated.  
+For each assignment, the code randomly selects from the pool of non-assigned members, so running the bot multiple times will result in different assignments. Additionally, every non-bot member of the channel is assumed to be participating, so the bot should only be run in a channel in which all channel members wish to be included in Secret Santa.
 
 ## Dependencies ##
 - [pycord](https://pycord.dev/)
@@ -20,4 +20,4 @@ For each assignment, the code randomly selects from the pool of non-assigned mem
 8. Wait for the ``<bot_name> is ready!`` terminal output
 9. In your desired channel, type and enter ``/assign-secret-santa``
 
-Every non-bot member of the channel will receive a direct message from the bot containing the name and unique username of their assigned giftee behind spoiler text.
+The bot will return a confirmation message and every non-bot member of the channel will receive a direct message from the bot containing the name and unique username of their assigned giftee behind spoiler text.
